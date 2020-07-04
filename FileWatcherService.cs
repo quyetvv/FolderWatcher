@@ -16,6 +16,7 @@ namespace FolderWatcher
     {
         List<string> folderPaths = new List<string>();
         List<string> servicePaths = new List<string>();
+        string logPath = ConfigurationManager.AppSettings["LogPath"] + "\\" + DateTime.Now.ToString("dd-MM-yy") + ".txt";
         public FileWatcherService()
         {
             InitializeComponent();
@@ -25,8 +26,6 @@ namespace FolderWatcher
                 System.Diagnostics.EventLog.CreateEventSource(
                     "FolderWatcher", "MyLog");
             }
-            eventLog1.Source = "FolderWatcher";
-            eventLog1.Log = "MyLog";            
         }
 
         protected override void OnStart(string[] args)
@@ -36,34 +35,32 @@ namespace FolderWatcher
                 WriteLog("Service started");
                 folderPaths = ConfigurationManager.AppSettings["FolderPaths"].Split(';').ToList();
                 servicePaths = ConfigurationManager.AppSettings["ServicePaths"].Split(';').ToList();
+                List<FileSystemWatcher> listWatcher = new List<FileSystemWatcher>();
                 foreach (string path in folderPaths)
                 {
                     WriteLog("Registering path:" + path);
                     // Create a new FileSystemWatcher and set its properties.
-                    using (FileSystemWatcher watcher = new FileSystemWatcher())
-                    {
-                        watcher.Path = path;
+                    FileSystemWatcher watcher = new FileSystemWatcher();
+                    watcher.Path = path;
 
-                        //// Watch for changes in LastAccess and LastWrite times, and
-                        //// the renaming of files or directories.
-                        //watcher.NotifyFilter = NotifyFilters.LastAccess
-                        //                     | NotifyFilters.LastWrite
-                        //                     | NotifyFilters.FileName
-                        //                     | NotifyFilters.DirectoryName;
+                    //// Watch for changes in LastAccess and LastWrite times, and
+                    //// the renaming of files or directories.
+                    //watcher.NotifyFilter = NotifyFilters.LastAccess
+                    //                     | NotifyFilters.LastWrite
+                    //                     | NotifyFilters.FileName
+                    //                     | NotifyFilters.DirectoryName;
 
-                        //watcher.Filter = "*.*";
+                    //watcher.Filter = "*.*";
 
-                        // Add event handlers.
-                        watcher.Changed += OnChanged;
-                        watcher.Created += OnChanged;
-                        watcher.Deleted += OnChanged;
+                    // Add event handlers.
+                    watcher.Changed += OnChanged;
+                    
+                    // Begin watching.
+                    watcher.EnableRaisingEvents = true;
 
-                        // Begin watching.
-                        watcher.EnableRaisingEvents = true;
-
-                        // Wait for the user to quit the program.
-                        WriteLog("Monitoring event on " + path);
-                    }
+                    listWatcher.Add(watcher);
+                    // Wait for the user to quit the program.
+                    WriteLog("Monitoring event on " + path);
                 }
             }
             catch (Exception ex)
@@ -88,15 +85,36 @@ namespace FolderWatcher
             }
         }
 
+        bool dateChanged = false;
+        private bool EnableLog()
+        {
+            if (string.IsNullOrEmpty(logPath))
+            {
+                return false;
+            }
+            if (!dateChanged && DateTime.Now.Hour == 0)
+            {
+                dateChanged = true;
+                logPath = $"${logPath}\\${DateTime.Now.ToString("dd-MM-yy")}.txt";
+            }
+            if (dateChanged && DateTime.Now.Hour != 0)
+            {
+                dateChanged = false;
+            }
+            return true;
+        }
         private void WriteLog(string msg)
         {
-            // eventLog1.WriteEntry($"Event on folder: {e.Name} {e.ChangeType} {servicePathFound}");
-            File.AppendAllText("C:\\fw-log.txt", "\r\n" + msg);
+            if (EnableLog())
+            {
+                // eventLog1.WriteEntry($"Event on folder: {e.Name} {e.ChangeType} {servicePathFound}");
+                File.AppendAllText(logPath, "\r\n" + msg);                
+            }
         }
 
         protected override void OnStop()
         {
-            eventLog1.WriteEntry($"Service stopped");
+            WriteLog($"Service stopped");
         }
     }
 }
