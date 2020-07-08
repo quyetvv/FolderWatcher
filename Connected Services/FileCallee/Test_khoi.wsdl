@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:tns="urn:microsoft-dynamics-schemas/codeunit/Test_khoi" targetNamespace="urn:microsoft-dynamics-schemas/codeunit/Test_khoi" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <schema elementFormDefault="qualified" targetNamespace="urn:microsoft-dynamics-schemas/codeunit/Test_khoi" xmlns="http://www.w3.org/2001/XMLSchema">
+      <element name="CreateFiles">
+        <complexType>
+          <sequence />
+        </complexType>
+      </element>
+      <element name="CreateFiles_Result">
+        <complexType>
+          <sequence />
+        </complexType>
+      </element>
+    </schema>
+  </types>
+  <message name="CreateFiles">
+    <part name="parameters" element="tns:CreateFiles" />
+  </message>
+  <message name="CreateFiles_Result">
+    <part name="parameters" element="tns:CreateFiles_Result" />
+  </message>
+  <portType name="Test_khoi_Port">
+    <operation name="CreateFiles">
+      <input name="CreateFiles" message="tns:CreateFiles" />
+      <output name="CreateFiles_Result" message="tns:CreateFiles_Result" />
+    </operation>
+  </portType>
+  <binding name="Test_khoi_Binding" type="tns:Test_khoi_Port">
+    <binding transport="http://schemas.xmlsoap.org/soap/http" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+    <operation name="CreateFiles">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/Test_khoi:CreateFiles" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="CreateFiles">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="CreateFiles_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+  </binding>
+  <service name="Test_khoi">
+    <port name="Test_khoi_Port" binding="tns:Test_khoi_Binding">
+      <address location="http://nav.prentow.com:9047/NAV2019Live/WS/PS%20VN/Codeunit/Test_khoi" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+    </port>
+  </service>
+</definitions>

@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<configurationSnapshot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="urn:schemas-microsoft-com:xml-wcfconfigurationsnapshot">
+  <behaviors />
+  <bindings>
+    <binding digest="System.ServiceModel.Configuration.BasicHttpBindingElement, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089:&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&lt;Data name=&quot;Test_khoi_Binding&quot; /&gt;" bindingType="basicHttpBinding" name="Test_khoi_Binding" />
+  </bindings>
+  <endpoints>
+    <endpoint normalizedDigest="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&lt;Data address=&quot;http://nav.prentow.com:9047/NAV2019Live/WS/PS%20VN/Codeunit/Test_khoi&quot; binding=&quot;basicHttpBinding&quot; bindingConfiguration=&quot;Test_khoi_Binding&quot; contract=&quot;FileCallee.Test_khoi_Port&quot; name=&quot;Test_khoi_Port&quot; /&gt;" digest="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&lt;Data address=&quot;http://nav.prentow.com:9047/NAV2019Live/WS/PS%20VN/Codeunit/Test_khoi&quot; binding=&quot;basicHttpBinding&quot; bindingConfiguration=&quot;Test_khoi_Binding&quot; contract=&quot;FileCallee.Test_khoi_Port&quot; name=&quot;Test_khoi_Port&quot; /&gt;" contractName="FileCallee.Test_khoi_Port" name="Test_khoi_Port" />
+  </endpoints>
+</configurationSnapshot>

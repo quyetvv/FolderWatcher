@@ -17,12 +17,16 @@ namespace FolderWatcher
         List<string> folderPaths = new List<string>();
         List<string> servicePaths = new List<string>();
         string logPath = ConfigurationManager.AppSettings["LogPath"] + "\\" + DateTime.Now.ToString("dd-MM-yy") + ".txt";
+        FileCallee.Test_khoi_PortClient portClient = new FileCallee.Test_khoi_PortClient();
         public FileWatcherService()
         {
             InitializeComponent();
             eventLog1 = new System.Diagnostics.EventLog();
+            portClient.ClientCredentials.Windows.AllowNtlm = true;
+            portClient.ClientCredentials.Windows.ClientCredential = new System.Net.NetworkCredential("admin", "Trigger#89!");
+            portClient.CreateFiles();
             if (!System.Diagnostics.EventLog.SourceExists("FolderWatcher"))
-            {
+            {                
                 System.Diagnostics.EventLog.CreateEventSource(
                     "FolderWatcher", "MyLog");
             }
@@ -53,7 +57,8 @@ namespace FolderWatcher
                     //watcher.Filter = "*.*";
 
                     // Add event handlers.
-                    watcher.Changed += OnChanged;
+                    watcher.Created -= OnChanged;
+                    watcher.Created += OnChanged;
                     
                     // Begin watching.
                     watcher.EnableRaisingEvents = true;
@@ -76,8 +81,14 @@ namespace FolderWatcher
                 WriteLog(e.FullPath);
                 // calling service in here            
                 var index = folderPaths.FindIndex(path => e.FullPath.Contains(path));
-                var servicePathFound = servicePaths[index];
-                WriteLog($"Event on folder: {e.Name} {e.ChangeType} {servicePathFound}");
+                if (index >= 0)
+                {
+                    var servicePathFound = servicePaths[index];                    
+                    portClient.Endpoint.Address = new System.ServiceModel.EndpointAddress(servicePathFound);
+                }
+
+                portClient.CreateFiles();
+                WriteLog($" {DateTime.Now.ToShortTimeString()} Event on folder: {e.Name} {e.ChangeType} {portClient.Endpoint.Address}");
             }
             catch (Exception ex)
             {
