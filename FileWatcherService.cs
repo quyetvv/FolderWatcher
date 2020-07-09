@@ -23,8 +23,7 @@ namespace FolderWatcher
             InitializeComponent();
             eventLog1 = new System.Diagnostics.EventLog();
             portClient.ClientCredentials.Windows.AllowNtlm = true;
-            portClient.ClientCredentials.Windows.ClientCredential = new System.Net.NetworkCredential("admin", "Trigger#89!");
-            portClient.CreateFiles();
+            portClient.ClientCredentials.Windows.ClientCredential = new System.Net.NetworkCredential("admin", "Trigger#89!");            
             if (!System.Diagnostics.EventLog.SourceExists("FolderWatcher"))
             {                
                 System.Diagnostics.EventLog.CreateEventSource(
