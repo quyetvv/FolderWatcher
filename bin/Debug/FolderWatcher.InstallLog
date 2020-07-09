@@ -199,3 +199,38 @@ Affected parameters are:
    logtoconsole = 
    logfile = D:\Projects\Prentow\FolderWatcher\FolderWatcher\bin\Debug\FolderWatcher.InstallLog
    assemblypath = D:\Projects\Prentow\FolderWatcher\FolderWatcher\bin\Debug\FolderWatcher.exe
+Installing assembly 'D:\Docs\FolderWatcher\bin\Debug\FolderWatcher.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\Docs\FolderWatcher\bin\Debug\FolderWatcher.InstallLog
+   assemblypath = D:\Docs\FolderWatcher\bin\Debug\FolderWatcher.exe
+Installing service Service1...
+Service Service1 has been successfully installed.
+Creating EventLog source Service1 in log Application...
+Committing assembly 'D:\Docs\FolderWatcher\bin\Debug\FolderWatcher.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\Docs\FolderWatcher\bin\Debug\FolderWatcher.InstallLog
+   assemblypath = D:\Docs\FolderWatcher\bin\Debug\FolderWatcher.exe
+Uninstalling assembly 'D:\Docs\FolderWatcher\bin\Debug\FolderWatcher.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\Docs\FolderWatcher\bin\Debug\FolderWatcher.InstallLog
+   assemblypath = D:\Docs\FolderWatcher\bin\Debug\FolderWatcher.exe
+Removing EventLog source Service1.
+Service Service1 is being removed from the system...
+Service Service1 was successfully removed from the system.
+Attempt to stop service Service1.
+Installing assembly 'D:\Docs\FolderWatcher\bin\Debug\FolderWatcher.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\Docs\FolderWatcher\bin\Debug\FolderWatcher.InstallLog
+   assemblypath = D:\Docs\FolderWatcher\bin\Debug\FolderWatcher.exe
+Installing service Service1...
+Service Service1 has been successfully installed.
+Creating EventLog source Service1 in log Application...
+Committing assembly 'D:\Docs\FolderWatcher\bin\Debug\FolderWatcher.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\Docs\FolderWatcher\bin\Debug\FolderWatcher.InstallLog
+   assemblypath = D:\Docs\FolderWatcher\bin\Debug\FolderWatcher.exe
