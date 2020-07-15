@@ -8,6 +8,7 @@ Cài đặt service
 installutil /u FolderWatcher.exe
 installutil FolderWatcher.exe
 
+Cấu hình triển khai
 B1: Máy cài đặt: 
 Vào thư mục có net framework và mở InstallUtil.exe run as Admin:
 cd C:\Windows\Microsoft.NET\Framework\v4.0.30319
