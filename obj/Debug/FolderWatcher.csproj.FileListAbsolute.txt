@@ -8,3 +8,11 @@ D:\Projects\Prentow\FolderWatcher\FolderWatcher\obj\Debug\FolderWatcher.csproj.C
 D:\Projects\Prentow\FolderWatcher\FolderWatcher\obj\Debug\FolderWatcher.exe
 D:\Projects\Prentow\FolderWatcher\FolderWatcher\obj\Debug\FolderWatcher.pdb
 D:\Projects\Prentow\FolderWatcher\FolderWatcher\obj\Debug\FolderWatcher.csprojAssemblyReference.cache
+D:\Docs\FolderWatcher\bin\Debug\FolderWatcher.exe.config
+D:\Docs\FolderWatcher\bin\Debug\FolderWatcher.exe
+D:\Docs\FolderWatcher\obj\Debug\FolderWatcher.FileWatcherService.resources
+D:\Docs\FolderWatcher\obj\Debug\FolderWatcher.ProjectInstaller.resources
+D:\Docs\FolderWatcher\obj\Debug\FolderWatcher.csproj.GenerateResource.cache
+D:\Docs\FolderWatcher\obj\Debug\FolderWatcher.exe
+D:\Docs\FolderWatcher\obj\Debug\FolderWatcher.pdb
+D:\Docs\FolderWatcher\bin\Debug\FolderWatcher.pdb
