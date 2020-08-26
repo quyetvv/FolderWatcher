@@ -57,6 +57,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="FileWatcherConsole.cs" />
     <Compile Include="FileWatcherService.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -74,10 +75,13 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Connected Services\FileCallee\FolderWatcher.FileCallee.Action_FolderWatcher_Result.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\FileCallee\FolderWatcher.FileCallee.CreateFiles_Result.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\FileCallee\Test_khoi.wsdl" />
+    <None Include="Connected Services\FileCallee\FolderWatcher1.wsdl" />
     <None Include="ReadMe.md" />
   </ItemGroup>
   <ItemGroup>

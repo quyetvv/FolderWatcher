@@ -19,10 +19,10 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://nav.prentow.com:9047/NAV2019Live/WS/PS%20VN/Codeunit/Test_khoi" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://nav.prentow.com:9047/NAV2019Live/WS/PS%20VN/Codeunit/FolderWatcher" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="Test_khoi.wsdl" MetadataType="Wsdl" ID="0c5fe7c7-9cfd-4319-9d8f-372cf8522207" SourceId="1" SourceUrl="http://nav.prentow.com:9047/NAV2019Live/WS/PS VN/Codeunit/Test_khoi" />
+    <MetadataFile FileName="FolderWatcher1.wsdl" MetadataType="Wsdl" ID="07656c8c-8a8b-4cd7-af1d-cd75481e133a" SourceId="1" SourceUrl="http://nav.prentow.com:9047/NAV2019Live/WS/PS VN/Codeunit/FolderWatcher" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

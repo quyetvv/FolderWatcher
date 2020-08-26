@@ -12,15 +12,14 @@ using System.Threading.Tasks;
 
 namespace FolderWatcher
 {
-    public partial class FileWatcherService : ServiceBase
+    public class FileWatcherConsole
     {
         List<string> folderPaths = new List<string>();
         List<string> servicePaths = new List<string>();
         string logPath = ConfigurationManager.AppSettings["LogPath"] + "\\" + DateTime.Now.ToString("dd-MM-yy") + ".txt";
         FileCallee.FolderWatcher_PortClient portClient = new FileCallee.FolderWatcher_PortClient();
-        public FileWatcherService()
-        {
-            InitializeComponent();
+        public FileWatcherConsole()
+        {            
             portClient.ClientCredentials.Windows.AllowNtlm = true;
             string userName = ConfigurationManager.AppSettings["WS_Username"];
             string password = ConfigurationManager.AppSettings["WS_Password"];
@@ -32,7 +31,7 @@ namespace FolderWatcher
             }
         }
 
-        protected override void OnStart(string[] args)
+        public void OnStart(string[] args)
         {
             try
             {
@@ -45,7 +44,7 @@ namespace FolderWatcher
                     WriteLog("Registering path:" + path);
                     // Create a new FileSystemWatcher and set its properties.
                     FileSystemWatcher watcher = new FileSystemWatcher();
-                    watcher.Path = path;                    
+                    watcher.Path = path;
 
                     // Add event handlers.
                     watcher.Created -= OnChanged;
@@ -84,11 +83,11 @@ namespace FolderWatcher
                 {
                     portClient.Endpoint.Address = new System.ServiceModel.EndpointAddress(servicePaths.First());
                 }
-                
-                portClient.Action_FolderWatcher(new FileInfo(e.FullPath).DirectoryName,e.Name);
+
+                portClient.Action_FolderWatcher(new FileInfo(e.FullPath).DirectoryName, e.Name);
                 try
                 {
-                    // File.Delete(e.FullPath);
+                    File.Delete(e.FullPath);
                 }
                 catch (Exception ex)
                 {
@@ -129,7 +128,7 @@ namespace FolderWatcher
             }
         }
 
-        protected override void OnStop()
+        public void OnStop()
         {
             WriteLog($"Service stopped");
         }

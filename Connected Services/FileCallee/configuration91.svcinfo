@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="LKpNnpiODO8VHz5RC9Ymx/5tVyc=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="sO6vsM7Yxdwj+ELAqs0WwHw4nA4=">
   <bindingConfigurations>
-    <bindingConfiguration bindingType="basicHttpBinding" name="Test_khoi_Binding">
+    <bindingConfiguration bindingType="basicHttpBinding" name="FolderWatcher_Binding">
       <properties>
         <property path="/name" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>Test_khoi_Binding</serializedValue>
+          <serializedValue>FolderWatcher_Binding</serializedValue>
         </property>
         <property path="/closeTimeout" isComplexType="false" isExplicitlyDefined="true" clrType="System.TimeSpan, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -112,10 +112,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="Test_khoi_Port" contract="FileCallee.Test_khoi_Port" bindingType="basicHttpBinding" address="http://nav.prentow.com:9047/NAV2019Live/WS/PS VN/Codeunit/Test_khoi" bindingConfiguration="Test_khoi_Binding">
+    <endpoint name="FolderWatcher_Port" contract="FileCallee.FolderWatcher_Port" bindingType="basicHttpBinding" address="http://nav.prentow.com:9047/NAV2019Live/WS/PS VN/Codeunit/FolderWatcher" bindingConfiguration="FolderWatcher_Binding">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://nav.prentow.com:9047/NAV2019Live/WS/PS%20VN/Codeunit/Test_khoi</serializedValue>
+          <serializedValue>http://nav.prentow.com:9047/NAV2019Live/WS/PS%20VN/Codeunit/FolderWatcher</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -124,10 +124,10 @@
           <serializedValue>basicHttpBinding</serializedValue>
         </property>
         <property path="/bindingConfiguration" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>Test_khoi_Binding</serializedValue>
+          <serializedValue>FolderWatcher_Binding</serializedValue>
         </property>
         <property path="/contract" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>FileCallee.Test_khoi_Port</serializedValue>
+          <serializedValue>FileCallee.FolderWatcher_Port</serializedValue>
         </property>
         <property path="/headers" isComplexType="true" isExplicitlyDefined="false" clrType="System.ServiceModel.Configuration.AddressHeaderCollectionElement, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>System.ServiceModel.Configuration.AddressHeaderCollectionElement</serializedValue>
@@ -187,7 +187,7 @@
           <serializedValue>False</serializedValue>
         </property>
         <property path="/name" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>Test_khoi_Port</serializedValue>
+          <serializedValue>FolderWatcher_Port</serializedValue>
         </property>
         <property path="/kind" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />

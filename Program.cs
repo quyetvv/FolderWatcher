@@ -14,6 +14,11 @@ namespace FolderWatcher
         /// </summary>
         static void Main()
         {
+            //var service = new FileWatcherConsole();
+            //service.OnStart(new string[] { });
+            //Console.Read();
+            //return;
+
             ServiceBase[] ServicesToRun;
             ServicesToRun = new ServiceBase[]
             {

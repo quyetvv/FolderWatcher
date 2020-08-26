@@ -12,82 +12,153 @@ namespace FolderWatcher.FileCallee {
     
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(Namespace="urn:microsoft-dynamics-schemas/codeunit/Test_khoi", ConfigurationName="FileCallee.Test_khoi_Port")]
-    public interface Test_khoi_Port {
+    [System.ServiceModel.ServiceContractAttribute(Namespace="urn:microsoft-dynamics-schemas/codeunit/FolderWatcher", ConfigurationName="FileCallee.FolderWatcher_Port")]
+    public interface FolderWatcher_Port {
         
         // CODEGEN: Generating message contract since the wrapper name (CreateFiles_Result) of message CreateFiles_Result does not match the default value (CreateFiles)
-        [System.ServiceModel.OperationContractAttribute(Action="urn:microsoft-dynamics-schemas/codeunit/Test_khoi:CreateFiles", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="urn:microsoft-dynamics-schemas/codeunit/FolderWatcher:CreateFiles", ReplyAction="*")]
         FolderWatcher.FileCallee.CreateFiles_Result CreateFiles(FolderWatcher.FileCallee.CreateFiles request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="urn:microsoft-dynamics-schemas/codeunit/Test_khoi:CreateFiles", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="urn:microsoft-dynamics-schemas/codeunit/FolderWatcher:CreateFiles", ReplyAction="*")]
         System.Threading.Tasks.Task<FolderWatcher.FileCallee.CreateFiles_Result> CreateFilesAsync(FolderWatcher.FileCallee.CreateFiles request);
+        
+        // CODEGEN: Generating message contract since the wrapper name (Action_FolderWatcher_Result) of message Action_FolderWatcher_Result does not match the default value (Action_FolderWatcher)
+        [System.ServiceModel.OperationContractAttribute(Action="urn:microsoft-dynamics-schemas/codeunit/FolderWatcher:Action_FolderWatcher", ReplyAction="*")]
+        FolderWatcher.FileCallee.Action_FolderWatcher_Result Action_FolderWatcher(FolderWatcher.FileCallee.Action_FolderWatcher request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="urn:microsoft-dynamics-schemas/codeunit/FolderWatcher:Action_FolderWatcher", ReplyAction="*")]
+        System.Threading.Tasks.Task<FolderWatcher.FileCallee.Action_FolderWatcher_Result> Action_FolderWatcherAsync(FolderWatcher.FileCallee.Action_FolderWatcher request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="CreateFiles", WrapperNamespace="urn:microsoft-dynamics-schemas/codeunit/Test_khoi", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="CreateFiles", WrapperNamespace="urn:microsoft-dynamics-schemas/codeunit/FolderWatcher", IsWrapped=true)]
     public partial class CreateFiles {
         
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="urn:microsoft-dynamics-schemas/codeunit/FolderWatcher", Order=0)]
+        public string fileName_Par;
+        
         public CreateFiles() {
+        }
+        
+        public CreateFiles(string fileName_Par) {
+            this.fileName_Par = fileName_Par;
         }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="CreateFiles_Result", WrapperNamespace="urn:microsoft-dynamics-schemas/codeunit/Test_khoi", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="CreateFiles_Result", WrapperNamespace="urn:microsoft-dynamics-schemas/codeunit/FolderWatcher", IsWrapped=true)]
     public partial class CreateFiles_Result {
         
         public CreateFiles_Result() {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface Test_khoi_PortChannel : FolderWatcher.FileCallee.Test_khoi_Port, System.ServiceModel.IClientChannel {
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="Action_FolderWatcher", WrapperNamespace="urn:microsoft-dynamics-schemas/codeunit/FolderWatcher", IsWrapped=true)]
+    public partial class Action_FolderWatcher {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="urn:microsoft-dynamics-schemas/codeunit/FolderWatcher", Order=0)]
+        public string filePath_Par;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="urn:microsoft-dynamics-schemas/codeunit/FolderWatcher", Order=1)]
+        public string fileName_Par;
+        
+        public Action_FolderWatcher() {
+        }
+        
+        public Action_FolderWatcher(string filePath_Par, string fileName_Par) {
+            this.filePath_Par = filePath_Par;
+            this.fileName_Par = fileName_Par;
+        }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class Test_khoi_PortClient : System.ServiceModel.ClientBase<FolderWatcher.FileCallee.Test_khoi_Port>, FolderWatcher.FileCallee.Test_khoi_Port {
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="Action_FolderWatcher_Result", WrapperNamespace="urn:microsoft-dynamics-schemas/codeunit/FolderWatcher", IsWrapped=true)]
+    public partial class Action_FolderWatcher_Result {
         
-        public Test_khoi_PortClient() {
+        public Action_FolderWatcher_Result() {
+        }
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public interface FolderWatcher_PortChannel : FolderWatcher.FileCallee.FolderWatcher_Port, System.ServiceModel.IClientChannel {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class FolderWatcher_PortClient : System.ServiceModel.ClientBase<FolderWatcher.FileCallee.FolderWatcher_Port>, FolderWatcher.FileCallee.FolderWatcher_Port {
+        
+        public FolderWatcher_PortClient() {
         }
         
-        public Test_khoi_PortClient(string endpointConfigurationName) : 
+        public FolderWatcher_PortClient(string endpointConfigurationName) : 
                 base(endpointConfigurationName) {
         }
         
-        public Test_khoi_PortClient(string endpointConfigurationName, string remoteAddress) : 
+        public FolderWatcher_PortClient(string endpointConfigurationName, string remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
         
-        public Test_khoi_PortClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public FolderWatcher_PortClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
         
-        public Test_khoi_PortClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public FolderWatcher_PortClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        FolderWatcher.FileCallee.CreateFiles_Result FolderWatcher.FileCallee.Test_khoi_Port.CreateFiles(FolderWatcher.FileCallee.CreateFiles request) {
+        FolderWatcher.FileCallee.CreateFiles_Result FolderWatcher.FileCallee.FolderWatcher_Port.CreateFiles(FolderWatcher.FileCallee.CreateFiles request) {
             return base.Channel.CreateFiles(request);
         }
         
-        public void CreateFiles() {
+        public void CreateFiles(string fileName_Par) {
             FolderWatcher.FileCallee.CreateFiles inValue = new FolderWatcher.FileCallee.CreateFiles();
-            FolderWatcher.FileCallee.CreateFiles_Result retVal = ((FolderWatcher.FileCallee.Test_khoi_Port)(this)).CreateFiles(inValue);
+            inValue.fileName_Par = fileName_Par;
+            FolderWatcher.FileCallee.CreateFiles_Result retVal = ((FolderWatcher.FileCallee.FolderWatcher_Port)(this)).CreateFiles(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<FolderWatcher.FileCallee.CreateFiles_Result> FolderWatcher.FileCallee.Test_khoi_Port.CreateFilesAsync(FolderWatcher.FileCallee.CreateFiles request) {
+        System.Threading.Tasks.Task<FolderWatcher.FileCallee.CreateFiles_Result> FolderWatcher.FileCallee.FolderWatcher_Port.CreateFilesAsync(FolderWatcher.FileCallee.CreateFiles request) {
             return base.Channel.CreateFilesAsync(request);
         }
         
-        public System.Threading.Tasks.Task<FolderWatcher.FileCallee.CreateFiles_Result> CreateFilesAsync() {
+        public System.Threading.Tasks.Task<FolderWatcher.FileCallee.CreateFiles_Result> CreateFilesAsync(string fileName_Par) {
             FolderWatcher.FileCallee.CreateFiles inValue = new FolderWatcher.FileCallee.CreateFiles();
-            return ((FolderWatcher.FileCallee.Test_khoi_Port)(this)).CreateFilesAsync(inValue);
+            inValue.fileName_Par = fileName_Par;
+            return ((FolderWatcher.FileCallee.FolderWatcher_Port)(this)).CreateFilesAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        FolderWatcher.FileCallee.Action_FolderWatcher_Result FolderWatcher.FileCallee.FolderWatcher_Port.Action_FolderWatcher(FolderWatcher.FileCallee.Action_FolderWatcher request) {
+            return base.Channel.Action_FolderWatcher(request);
+        }
+        
+        public void Action_FolderWatcher(string filePath_Par, string fileName_Par) {
+            FolderWatcher.FileCallee.Action_FolderWatcher inValue = new FolderWatcher.FileCallee.Action_FolderWatcher();
+            inValue.filePath_Par = filePath_Par;
+            inValue.fileName_Par = fileName_Par;
+            FolderWatcher.FileCallee.Action_FolderWatcher_Result retVal = ((FolderWatcher.FileCallee.FolderWatcher_Port)(this)).Action_FolderWatcher(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<FolderWatcher.FileCallee.Action_FolderWatcher_Result> FolderWatcher.FileCallee.FolderWatcher_Port.Action_FolderWatcherAsync(FolderWatcher.FileCallee.Action_FolderWatcher request) {
+            return base.Channel.Action_FolderWatcherAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<FolderWatcher.FileCallee.Action_FolderWatcher_Result> Action_FolderWatcherAsync(string filePath_Par, string fileName_Par) {
+            FolderWatcher.FileCallee.Action_FolderWatcher inValue = new FolderWatcher.FileCallee.Action_FolderWatcher();
+            inValue.filePath_Par = filePath_Par;
+            inValue.fileName_Par = fileName_Par;
+            return ((FolderWatcher.FileCallee.FolderWatcher_Port)(this)).Action_FolderWatcherAsync(inValue);
         }
     }
 }
